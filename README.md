@@ -1,16 +1,26 @@
-INSERT ➜ لإضافة صف جديد
+INSERT ➜ إضافة صف جديد
+
 UPDATE ➜ لتعديل بيانات موجودة
+
 PRIMARY KEY ➜ يمنع التكرار
+
 ALTER TABLE ➜ تعديل هيكل الجدول
+
 CASE ➜ لتحديد قيم مختلفة حسب شرط
 
 
 SELECT = جلب بيانات
+
 WHERE = فلترة
+
 ORDER BY = ترتيب
+
 GROUP BY = تجميع
+
 HAVING = شرط على التجميع
+
 DISTINCT = حذف التكرار
+
 TOP = تحديد عدد النتائج
 
 ما هو القيد (Constraint) في قواعد البيانات؟
