@@ -22,6 +22,29 @@ HAVING = شرط على التجميع
 DISTINCT = حذف التكرار
 
 TOP = تحديد عدد النتائج
+Here's the general logical execution order for SQL queries:
+
+|  Step | Clause                     | Explanation                                                      |
+| :---: | :------------------------- | :--------------------------------------------------------------- |
+| **1** | `FROM`                     | Identify source table(s), apply joins                            |
+| **2** | `WHERE`                    | Filter rows — remove records that don't meet conditions          |
+| **3** | `GROUP BY`                 | Group remaining rows by specified columns                        |
+| **4** | `HAVING`                   | Filter groups — remove groups that don't meet conditions         |
+| **5** | `SELECT`                   | Calculate expressions, apply aggregate functions, assign aliases |
+| **6** | `DISTINCT`                 | Remove duplicate rows from result set                            |
+| **7** | `ORDER BY`                 | Sort final results (can use aliases from SELECT)                 |
+| **8** | `LIMIT` / `OFFSET` / `TOP` | Restrict number of rows returned                                 |
+   
+
+| Concept                            | Explanation                                                     |
+| :--------------------------------- | :-------------------------------------------------------------- |
+| **Why `WHERE` before `GROUP BY`**  | Filters individual rows first, then aggregates — more efficient |
+| **Why `HAVING` after `GROUP BY`**  | Filters on aggregated values (e.g., `SUM(sales) > 1000`)        |
+| **Why `SELECT` before `ORDER BY`** | Aliases created in `SELECT` are available for sorting           |
+| **Why `ORDER BY` last**            | Sorting happens on the final result set                         |
+
+Visual Flow:
+Raw Data → FROM → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY → LIMIT → Final Result
 
 ما هو القيد (Constraint) في قواعد البيانات؟
 
